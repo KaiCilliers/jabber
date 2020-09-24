@@ -8,5 +8,14 @@
         android:id="@+id/loginFragment"
         android:name="com.example.jabbertest.LoginFragment"
         android:label="frag_login"
-        tools:layout="@layout/frag_login" />
+        tools:layout="@layout/frag_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_chatsFragment"
+            app:destination="@id/chatsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.example.jabbertest.ChatsFragment"
+        android:label="frag_chats"
+        tools:layout="@layout/frag_chats" />
 </navigation>

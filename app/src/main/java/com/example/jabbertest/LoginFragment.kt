@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.jabbertest.databinding.FragLoginBinding
 
 class LoginFragment : Fragment() {
@@ -20,6 +21,19 @@ class LoginFragment : Fragment() {
         val binding = FragLoginBinding.inflate(inflater)
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         binding.viewModel = viewModel
+
+        // Navigation
+        viewModel.navToChats.subscribeToNavigation(
+            owner = this,
+            actionsBeforeNavigation = {},
+            navigation = {
+                findNavController().navigate(
+                    LoginFragmentDirections.actionLoginFragmentToChatsFragment()
+                )
+            },
+            resetBool = { viewModel.onNavigatedToChats() }
+        )
+
         return binding.root
     }
 }
