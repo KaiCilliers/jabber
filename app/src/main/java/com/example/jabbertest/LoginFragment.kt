@@ -30,7 +30,9 @@ class LoginFragment : Fragment() {
         // Navigation
         viewModel.navToChats.subscribeToNavigation(
             owner = this,
-            actionsBeforeNavigation = {},
+            actionsBeforeNavigation = {
+                viewModel.captureAccount()
+            },
             navigation = {
                 findNavController().navigate(
                     LoginFragmentDirections.actionLoginFragmentToChatsFragment()
@@ -44,21 +46,26 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Timber.d(SharedPref.getString("data", "No Data :("))
+        accountSelection()
+    }
+
+    private fun accountSelection() {
+        saveAccount("${rb_one.text}")
         rb_group_accounts.setOnCheckedChangeListener{ group, checkedId ->
             when(checkedId) {
-                rb_one.id -> Timber.d("Changed Radiobutton value - $checkedId")
-                rb_two.id -> Timber.d("Changed Radiobutton value - $checkedId")
-                rb_three.id -> Timber.d("Changed Radiobutton value - $checkedId")
-                rb_four.id -> Timber.d("Changed Radiobutton value - $checkedId")
-                rb_five.id -> Timber.d("Changed Radiobutton value - $checkedId")
-                rb_six.id -> Timber.d("Changed Radiobutton value - $checkedId")
-                rb_seven.id -> Timber.d("Changed Radiobutton value - $checkedId")
-                rb_eight.id -> Timber.d("Changed Radiobutton value - $checkedId")
+                rb_one.id -> saveAccount("${rb_one.text}")
+                rb_two.id -> saveAccount("${rb_two.text}")
+                rb_three.id -> saveAccount("${rb_three.text}")
+                rb_four.id -> saveAccount("${rb_four.text}")
+                rb_five.id -> saveAccount("${rb_five.text}")
+                rb_six.id -> saveAccount("${rb_six.text}")
+                rb_seven.id -> saveAccount("${rb_seven.text}")
+                rb_eight.id -> saveAccount("${rb_eight.text}")
             }
         }
     }
-
-    fun accountSelected(v: View) {
-        Timber.d("The radio button that was clicked is - ${v.id}")
+    private fun saveAccount(account: String) {
+        Timber.d("Account selected is - $account")
+        viewModel.accountName(account)
     }
 }

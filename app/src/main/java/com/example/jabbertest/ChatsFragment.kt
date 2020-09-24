@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.jabbertest.databinding.FragChatsBinding
+import timber.log.Timber
 
 class ChatsFragment : Fragment() {
     private lateinit var viewModel: ChatsViewModel
@@ -19,5 +20,10 @@ class ChatsFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(ChatsViewModel::class.java)
         binding.viewModel = viewModel
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Timber.d(SharedPref.getString("com.example.jabbertest.account", "No account..."))
     }
 }

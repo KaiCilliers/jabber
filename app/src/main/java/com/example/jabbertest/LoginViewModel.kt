@@ -14,6 +14,9 @@ class LoginViewModel : ViewModel() {
     private val _account = MutableLiveData<String>()
     val account: LiveData<String>
         get() = _account
+    fun accountName(name: String) {
+        _account.value = name
+    }
 
     // Navigation
     private val _navToChats = MutableLiveData<Boolean>()
@@ -29,6 +32,6 @@ class LoginViewModel : ViewModel() {
 
     // Other functions
     fun captureAccount() {
-
+        SharedPref.edit().putString("com.example.jabbertest.account", _account.value).commit()
     }
 }
