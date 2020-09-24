@@ -9,4 +9,14 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- Accounts -->
+    <string name="account_one">phoneone@pimux.de</string>
+    <string name="account_two">phonetwo@pimux.de</string>
+    <string name="account_three">phonethree@pimux.de</string>
+    <string name="account_four">phonefour@pimux.de</string>
+    <string name="account_five">phonefive@pimux.de</string>
+    <string name="account_six">phonesix@pimux.de</string>
+    <string name="account_seven">phoneseven@pimux.de</string>
+    <string name="account_eight">phoneeight@pimux.de</string>
 </resources>

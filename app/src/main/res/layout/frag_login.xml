@@ -14,48 +14,82 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="357dp"
-            android:layout_height="476dp"
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="128dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/scyther" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="32dp"
-            android:text="@{viewModel.variableA}"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Variable A"/>
+            <RadioButton
+                android:id="@+id/rb_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:checked="true"
+                android:text="@string/account_one" />
 
-        <TextView
-            android:id="@+id/tvB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="32dp"
-            android:text="@{viewModel.variableB}"
-            app:layout_constraintBottom_toTopOf="@+id/tvA"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="variable B"/>
+            <RadioButton
+                android:id="@+id/rb_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/account_two" />
+
+            <RadioButton
+                android:id="@+id/rb_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/account_three" />
+
+            <RadioButton
+                android:id="@+id/rb_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/account_four" />
+
+            <RadioButton
+                android:id="@+id/rb_five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/account_five" />
+
+            <RadioButton
+                android:id="@+id/rb_six"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/account_six" />
+
+            <RadioButton
+                android:id="@+id/rb_seven"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/account_seven" />
+
+            <RadioButton
+                android:id="@+id/rb_eight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/account_eight" />
+        </RadioGroup>
 
         <Button
             android:id="@+id/btnNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
-            android:text="@{viewModel.variableNext}"
             android:onClick="@{() -> viewModel.navToChats()}"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:text="@{viewModel.variableNext}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Next" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
