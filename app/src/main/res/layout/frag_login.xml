@@ -18,10 +18,33 @@
             android:id="@+id/imageView"
             android:layout_width="357dp"
             android:layout_height="476dp"
+            android:layout_marginTop="128dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/scyther" />
+
+        <TextView
+            android:id="@+id/tvA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            android:text="@{viewModel.variableA}"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Variable A"/>
+
+        <TextView
+            android:id="@+id/tvB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            android:text="@{viewModel.variableB}"
+            app:layout_constraintBottom_toTopOf="@+id/tvA"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="variable B"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
