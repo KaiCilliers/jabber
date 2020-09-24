@@ -45,8 +45,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
 
-    // Fragment Navigation
-
+    // SharedPreferences
+    implementation 'androidx.preference:preference-ktx:1.1.1'
 
     // XMPP
     implementation 'org.igniterealtime.smack:smack-android:4.3.4'

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.jabbertest.databinding.FragLoginBinding
+import timber.log.Timber
 
 class LoginFragment : Fragment() {
 
@@ -35,5 +36,9 @@ class LoginFragment : Fragment() {
         )
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Timber.d(SharedPref.getString("data", "No Data :("))
     }
 }
