@@ -1,2 +1,6 @@
+include ':models'
+include ':webservice'
+include ':repository'
+include ':database'
 include ':app'
 rootProject.name = "jabbertest"
